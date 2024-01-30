@@ -26,6 +26,9 @@ RUN pip-compile requirements.in && \
 COPY . /app/
 RUN chmod +x manage.py
 
+# Run collectstatic to gather static files
+RUN python manage.py collectstatic --noinput
+
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
 
