@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = os.getenv('DEBUG', default=False)
 SECRET_KEY = os.getenv('SECRET_KEY')
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default='*').split(',')
-CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', default='*').split(',')
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', default='https://*.aldryn.io').split(',')
 
 
 # Application definition
