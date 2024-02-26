@@ -20,4 +20,7 @@ services:
       POSTGRES_HOST_AUTH_METHOD: "trust"
       SERVICE_MANAGER: "fsm-postgres"
     volumes:
-      - ".:/app:rw"
+      - database-default:/var/lib/postgresql/data/
+
+volumes:
+  database-default:
