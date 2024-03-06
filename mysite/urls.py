@@ -18,6 +18,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
+from django.views import debug
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +26,7 @@ urlpatterns = [
 # this is for development purpose only
 # in production, you should use a reverse proxy like nginx instead
 if settings.DEBUG:
-    urlpatterns += staticfiles_urlpatterns()
+    urlpatterns.extend([
+        *staticfiles_urlpatterns(),
+        path('', debug.default_urlconf),
+    ])
