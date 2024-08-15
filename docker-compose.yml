@@ -11,6 +11,7 @@ services:
       - "./data:/data:rw"
     environment:
       DATABASE_URL: postgres://postgres@database_default:5432/db
+      DEBUG: 'True'
     links:
       - "database_default"
     # The following command is used to start the local development server.
