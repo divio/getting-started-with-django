@@ -14,9 +14,9 @@ RUN apt-get update && \
 # Copy only the requirements.in and .env.local files into the container
 COPY requirements.in /app/
 
-# Install pip-tools
-RUN pip install --upgrade pip && \
-    pip install pip-tools
+# Install pip-tools with compatible pip version
+RUN pip install --upgrade "pip<25" && \
+    pip install "pip-tools==7.5.1"
 
 # Compile requirements.in to requirements.txt and install pip requirements
 RUN pip-compile requirements.in && \
