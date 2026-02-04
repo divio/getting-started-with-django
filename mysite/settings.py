@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/stable/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
@@ -29,6 +29,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
+# SECURITY WARNING: provide a list of representing the host/domain names that
+# this Django site can serve. This is a security measure to prevent HTTP Host
+# header attacks.
+# See https://docs.djangoproject.com/en/stable/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS=["https://*.aldryn.io"]
 
